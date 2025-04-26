@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Boy Emulator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Game Boy Emulator</h1>
+        <div class="gameboy">
+            <div class="screen-container">
+                <canvas id="screen"></canvas>
+            </div>
+            <div class="controls">
+                <div class="dpad">
+                    <button id="btn-up">↑</button>
+                    <button id="btn-left">←</button>
+                    <button id="btn-right">→</button>
+                    <button id="btn-down">↓</button>
+                </div>
+                <div class="buttons">
+                    <button id="btn-a">A</button>
+                    <button id="btn-b">B</button>
+                </div>
+                <div class="menu-buttons">
+                    <button id="btn-select">SELECT</button>
+                    <button id="btn-start">START</button>
+                </div>
+            </div>
+        </div>
+        <div class="status-bar">
+            <span id="status">Ready</span>: <span id="game-name"></span>
+        </div>
+        <div id="error" class="error hide"></div>
+        <div class="rom-input">
+            <input type="file" id="file" accept=".gb,.gbc">
+            <label for="file">Load ROM</label>
+        </div>
+        <div class="options">
+            <label>
+                <input type="checkbox" id="sound-toggle" checked>
+                Sound
+            </label>
+            <label>
+                Zoom:
+                <select id="zoom-select">
+                    <option value="1">1x</option>
+                    <option value="2" selected>2x</option>
+                    <option value="3">3x</option>
+                    <option value="4">4x</option>
+                </select>
+            </label>
+        </div>
+        <div class="credits">
+            <p>Based on <a href="https://github.com/juchi/gameboy.js" target="_blank">gameboy.js</a> by juchi</p>
+        </div>
+    </div>
+    <script src="app.js"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"4c6229722a6346bc8eb5cb0e5eae5d41","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>
+
