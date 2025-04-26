@@ -4,6 +4,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const soundToggle = document.getElementById('sound-toggle');
     const zoomSelect = document.getElementById('zoom-select');
     
+    // Create a RomFileReader for loading ROMs from file input
+    const fileInput = document.getElementById('file');
+    const fileReader = new GameboyJS.RomFileReader(fileInput);
+    
     // Create drop zone for ROM files
     const container = document.querySelector('.container');
     const dropZone = new GameboyJS.RomDropFileReader(container);
@@ -14,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
             class: GameboyJS.Keyboard
         },
         zoom: parseInt(zoomSelect.value, 10),
-        romReaders: [dropZone]
+        romReaders: [fileReader, dropZone]
     });
     
     // Set up sound toggle
@@ -92,4 +96,3 @@ document.addEventListener('DOMContentLoaded', function() {
         cpu.run();
     }
 });
-
